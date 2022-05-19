@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --body-purple: hsl(273, 75%, 66%); 
+    --body-blue: hsl(240, 73%, 65%); 
+    --text-blue: hsl(238, 29%, 16%); 
+    --text-red: hsl(14, 88%, 65%); 
+    --text-darkblue: hsl(240, 6%, 50%); 
+    --text-darkestblue: hsl(237, 12%, 33%); 
+    --divider-blue: hsl(240, 5%, 91%); 
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit; 
+}
+
+body {
+    margin:0; 
+    padding: 145px 25px;
+    min-height: 680px; 
+    background-image: linear-gradient(var(--body-purple), var(--body-blue)); 
+    color: var(--text-blue); 
+}
+
+h1 { 
+    margin-top: 0;
+    text-align: center;
+    font-size: 32px; 
+}
+
+.card {
+    background: white; 
+    border-radius: 32px;
+    max-width: 896px; 
+    background-repeat: no-repeat;
+    background-image: url("images/bg-pattern-mobile.svg"); 
+    background-position: center 0%; 
+    background-size:240px; 
+    display: relative; 
+    padding: 60px 20px; 
+    filter: drop-shadow(0px 25px 15px hsla(238, 29%, 16%, 0.317)) ; 
+}
+
+.card-box {
+    display: none;
+}
+
+.card-image {
+    position :relative; 
+}
+
+.box-pic {
+    display: none; 
+}
+
+.card-image img{
+    width: 100%; 
+    height: auto; 
+    left: 50%; 
+    transform: translateX(-50%);
+    display: block; 
+    max-width: 240px;  
+    position: absolute; 
+    top: -170px; 
+}
+
+.card-text{
+    padding-top: 100px; 
+}
+
+.accordion {
+    margin-top: -15px; 
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--divider-blue); 
+    padding-top: 16px; 
+    margin-bottom: 0; 
+}
+
+.accordion-question {
+    border: none; 
+    background: transparent; 
+    padding: 3.2px; 
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 14px; 
+    margin-bottom: 12px; 
+    display: flex;
+    width: 100%; 
+    text-align: left; 
+    justify-content: space-between;
+    align-items:center; 
+}
+
+.accordion-question.open {
+    font-weight: 700; 
+}
+
+.accordion-question.open::after {
+    transform: rotate(180deg); 
+}
+
+.accordion-question::after {
+    content: ''; 
+    background-image: url("images/icon-arrow-down.svg"); 
+    background-repeat: no-repeat; 
+    display: block;
+    width: 10px; 
+    height: 16px; 
+    justify-content: space-between;
+    align-content: center; 
+    border: none; 
+    transition: transform 300ms ease-in-out; 
+    background-size: contain; 
+}
+
+.accordion-question:focus, .accordion-question:focus-visible {
+    border: none; 
+    outline: dashed 1px var(--text-darkblue); 
+}
+.accordion-content {
+    font-size: 12px; 
+    line-height: 1.4; 
+    padding-bottom: 16px; 
+    padding-right: 20px; 
+    padding-left: 3px; 
+}
+
+.accordion-question.open {
+    font-weight: open; 
+} 
+
+.accordion-collapse {
+    transition:  300ms ease; 
+}
+
+.accordion-collapse.collapse {
+    display: none;  
+}
+.accordion-collapse.collapsing {
+    height: 0;
+    overflow: hidden; 
+}
+.accordion-collapse.open {
+    display: block;
+}
+
+@media (min-width: 896px){
+    body {
+        padding:200px;    
+    }
+    .card {
+        display:flex; 
+        margin: 0 auto; 
+        background-image: url("images/bg-pattern-desktop.svg");
+        background-size: 78%;  
+        background-repeat: no-repeat; 
+        background-position: -375px -165px;
+        padding: 70px 20px 70px 0; 
+        position: relative;
+    }
+    .card-box, .card-text {
+        flex: 1; 
+    }
+    h1 {
+        margin-left: 15%; 
+    }
+    
+    .card-image {
+        display: none;
+    }
+    .picture-1 {
+        position: relative; 
+        top: auto; 
+        left: auto; 
+        transform: translateX(-64px) translateY(-90px); 
+        width: 85%;
+        padding-right: 100px;
+        padding-top: 30%; 
+    }
+
+    .box-pic {
+        display: block;
+        position: absolute; 
+        transform: translateX(-55%) translateY(60%);
+        z-index: 1; 
+    }
+
+    .card-box {
+        display: flex;
+        position: absolute; 
+        top: 0%; 
+        left: 1; 
+        overflow:hidden; 
+    }
+    .card-text {
+        padding-top: 0; 
+        padding-right: 40px; 
+        
+    }
+
+    .accordion {
+        align-items: center;
+        margin-left: 45%;  
+        padding-left: 70px; 
+    }
+
+}
